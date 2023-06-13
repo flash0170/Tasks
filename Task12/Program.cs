@@ -16,9 +16,9 @@
  }
  else if (number1%number2 == 0)
  {
-    Console.Write("Второе число кратно первому");
+    Console.Write($"Первое число {number1} кратно второму {number2}");
  }
  else
  {
-    Console.Write($"Второе число не кратно первому, остаток {number1%number2}");
+    Console.Write($"Первое число не кратно второму, остаток {number1%number2}");
  }
