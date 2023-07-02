@@ -79,12 +79,12 @@ Console.WriteLine("\n=== ДВУМЕРНЫЙ МАССИВ ===\n");
 // Получение данных от пользователя
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("\n=== ВВЕДИТЕ ДАННЫЕ МАССИВА ===");
-int column = ReadData("Количество столбцов массива: ");
-int row = ReadData("Количество  строк   массива: ");
+int column = ReadData("Количество  строк   массива: ");
+int row = ReadData("Количество столбцов массива: ");
 Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine("\n=== ВВЕДИТЕ ДАННЫЕ ИСКОМОГО ЭЛЕМЕНТА ===");
-int findeVer = ReadData("Введите позицию по   вертикали: ");
 int findeHor = ReadData("Введите позицию по горизонтали: ");
+int findeVer = ReadData("Введите позицию по   вертикали: ");
 
 
 // Генерируем двумерный массив
