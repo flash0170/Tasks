@@ -95,7 +95,3 @@ PrintArray(array, findeVer, findeHor);
 
 Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("\n============== КОНЕЦ ==================");
-<<<<<<< HEAD
-=======
-
->>>>>>> 51695aeda54fd02c9103bf775270773dea3914ed
