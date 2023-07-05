@@ -15,14 +15,14 @@ Console.WriteLine($"Первая цифра {firstValue}");
 Console.WriteLine($"Втроая цифра {secondValue}");
 
 if (firstValue > secondValue)
-{
-    Console.WriteLine($"Наибольшая цифра {firstValue}");
-}
+    {
+        Console.WriteLine($"Наибольшая цифра {firstValue}");
+    }
 else if (firstValue == secondValue)
-{
-    Console.WriteLine("Цифры числа равны");
-}
-else
-{
-    Console.WriteLine($"Наибольшая цифра {secondValue}");
-}
+    {
+        Console.WriteLine("Цифры числа равны");
+    }
+    else
+        {
+            Console.WriteLine($"Наибольшая цифра {secondValue}");
+        }
