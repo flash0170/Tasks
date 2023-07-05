@@ -104,7 +104,7 @@ PrintArray(arr2DSecond);
 int[,] res2DArr = new int[row1, column2];
 Mylti2DArr(arr2DFirst, arr2DSecond, res2DArr);
 
-// 6. Выводим результат
+// Выводим результат
 Console.WriteLine();
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("ПРОИЗВЕДЕНИЕ ДВУХ МАТРИЦ");
