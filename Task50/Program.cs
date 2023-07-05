@@ -12,17 +12,19 @@
 // Метод ввода данных с консоли
 int ReadData(string msg)
 {
-    Console.ForegroundColor = ConsoleColor.DarkBlue;
+    Console.ForegroundColor = ConsoleColor.White;
     Console.Write(msg);
     return int.Parse(Console.ReadLine()!);
 }
 
 
-// Метод генерации массива 
-int[,] GenArray(int row , int column)
+// Метод для заполнения двумерного массива целыми числами
+int[,] GenArray(int row, int column)
 {
-    int i = 0; int j = 0;
+    int i = 0;
+    int j = 0;
     int[,] arr = new int[row, column];
+
     while (i < row)
     {
         j = 0;
@@ -36,52 +38,60 @@ int[,] GenArray(int row , int column)
     return arr;
 }
 
-
-// Метод вывода массива
-void PrintArray(int[,] arr)
+// Метод вывода двумерного массива в консоль с найденым элементом
+void PrintArray(int[,] arr, int rowP, int columnP)
 {
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine("\n=== ДВУМЕРНЫЙ МАССИВ ===");
-    for (int i = 0; i < arr.GetLength(0); i++)
+int i = 0;
+int j = 0; 
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("\n=== ДВУМЕРНЫЙ МАССИВ ===\n");
+     for (i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (j = 0; j < arr.GetLength(1); j++)
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Write(arr[i, j] + "\t");
+            if (rowP==i && columnP==j)
+            {
+            Console.ForegroundColor = ConsoleColor.Red; // Выделяем в массиве искомый элемент
+            arr[i, j] = arr[rowP, columnP];
+            Console.Write("");
+            }
+        Console.Write(arr[i, j] + "\t");               // Выводим массив
+        Console.ForegroundColor = ConsoleColor.Yellow;
+           
         }
-        Console.WriteLine();
+        Console.WriteLine(); 
     }
-}
 
-
-// Получение данных от пользователя
-Console.ForegroundColor = ConsoleColor.Yellow;
-Console.WriteLine("\n=== ВВЕДИТЕ ДАННЫЕ МАССИВА ===");
-int column = ReadData("Количество столбцов массива: ");
-int row = ReadData("Количество  строк   массива: ");
-Console.ForegroundColor = ConsoleColor.Yellow;
-Console.WriteLine("\n=== ВВЕДИТЕ ДАННЫЕ ИСКОМОГО ЭЛЕМЕНТА ===");
-int findeVer = ReadData("Введите позицию по   вертикали: ");
-int findeHor = ReadData("Введите позицию по горизонтали: ");
-
-
-// Генерируем массив
-int[,] array = GenArray(row, column);
-
-// Печать массива
-PrintArray(array);
-
-// Поиск элемента
-    if (findeVer < column && findeHor < row)
+     if (rowP < i && columnP < j)
     {
-        int result = array[findeVer, findeHor];
-        // Console.ForegroundColor = ConsoleColor.Red;
-        // Console.Write(result + "\t");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine($"\nИскомый элемент -> {result}");
+        Console.WriteLine($"\nИскомый элемент -> {arr[rowP, columnP]}"); // Вывод искомого элемента отдельной строкой
     }   
     else
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Индекс находился за пределами массива"); 
+        Console.WriteLine("\nИндекс находился за пределами массива"); // Сообщение об ошибке
     }
+
+
+}
+
+// Получение данных от пользователя
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("\n=== ВВЕДИТЕ ДАННЫЕ МАССИВА ===");
+int row = ReadData("Количество  строк   массива: ");
+int column = ReadData("Количество столбцов массива: ");
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("\n=== ВВЕДИТЕ ДАННЫЕ ИСКОМОГО ЭЛЕМЕНТА ===");
+int findeHor = ReadData("Введите позицию по горизонтали: ");
+int findeVer = ReadData("Введите позицию по   вертикали: ");
+
+// Генерируем двумерный массив
+int[,] array = GenArray(row, column);
+
+// Печатаем двумерный массив
+PrintArray(array, findeVer, findeHor);
+
+Console.ForegroundColor = ConsoleColor.Magenta;
+Console.WriteLine("\n============== КОНЕЦ ==================");
+

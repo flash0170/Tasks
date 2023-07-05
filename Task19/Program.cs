@@ -20,7 +20,7 @@
 // Метод определения палиндрома
 bool PaliTest(int num)
 {
-   bool res = false;
+     bool res = false;
      int d1 = num / 10000;
      int d2 = (num / 1000) % 10;
      int d3 = (num / 10) % 10;
