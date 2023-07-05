@@ -7,7 +7,7 @@
 Console.Clear();
 Console.Write("Введите число: ");
 int number = int.Parse(Console.ReadLine()!);
-if (number < 100 || number > 1000)
+if (number < 100 || number >= 1000)
 {
     Console.Write("Число не трехзначное, вводные данные не корректны");
 }
