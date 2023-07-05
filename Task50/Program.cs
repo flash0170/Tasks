@@ -89,9 +89,9 @@ int findeVer = ReadData("Введите позицию по   вертикали
 // Генерируем двумерный массив
 int[,] array = GenArray(row, column);
 
+
 // Печатаем двумерный массив
 PrintArray(array, findeVer, findeHor);
 
 Console.ForegroundColor = ConsoleColor.Magenta;
 Console.WriteLine("\n============== КОНЕЦ ==================");
-

@@ -6,8 +6,8 @@
 
 Console.Clear();
 Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine()!);
-if (number < 100 || number >= 1000)
+int number = int.Parse(Console.ReadLine()!);
+if (number < 100 || number > 1000)
 {
     Console.Write("Число не трехзначное, повторите ввод");
 }
